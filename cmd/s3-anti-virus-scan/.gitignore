@@ -1,0 +1,4 @@
+clamscan
+freshclam
+libclamav.so.*
+*.cvd
