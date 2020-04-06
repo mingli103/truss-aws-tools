@@ -20,7 +20,7 @@ func DecryptValue(session *session.Session, parameterStoreKey string) (string, e
 			if aerr.Code() == ssm.ErrCodeInternalServerError {
 				return "", errors.Wrap(err, "ssm appeared to have an internal error")
 			} else if aerr.Code() == ssm.ErrCodeInvalidKeyId || aerr.Code() == ssm.ErrCodeParameterNotFound || aerr.Code() == ssm.ErrCodeParameterVersionNotFound {
-				return "", errors.Wrap(err, "the provided patameter store key appears to be invalid")
+				return "", errors.Wrap(err, "the provided parameter store key appears to be invalid")
 			} else {
 				return "", errors.Wrap(err, "unknown AWS error")
 			}
